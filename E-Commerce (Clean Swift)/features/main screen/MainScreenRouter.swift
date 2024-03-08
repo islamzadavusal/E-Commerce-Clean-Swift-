@@ -14,7 +14,7 @@ import UIKit
 
 protocol ProductRoutingLogic {
     func routeToDetail(productResponse : ProductResponse, selectedIndex : Int)
-    func routeToFlightOverview(product : Product)
+    func routeToProductOverview(product : Product)
 }
 class MainScreenRouter: NSObject, ProductRoutingLogic {
 
@@ -25,7 +25,7 @@ class MainScreenRouter: NSObject, ProductRoutingLogic {
         self.viewController?.navigationController?.pushViewController(detail, animated: true)
     }
     
-    func routeToFlightOverview(product : Product) {
+    func routeToProductOverview(product : Product) {
         
     }
 }
