@@ -25,10 +25,16 @@ class ViewControllerFactory {
       
         // Ürün listesi için gerekli bileşenlerin oluşturulması
         let interactor = MainScreenInteractor()
-        let presenter = ProductListPresenter() // Doğru presenter burada
+        let presenter = MainScreenPresenter() // Doğru presenter burada
+        let router = MainScreenRouter()
+        
         productListController.interactor = interactor
+        productListController.router = router
+        
         interactor.presenter = presenter
         presenter.viewController = productListController
+        
+        router.viewController = productListController
         
         return productListController
     }

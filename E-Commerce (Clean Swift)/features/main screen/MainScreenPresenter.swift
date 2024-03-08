@@ -16,7 +16,7 @@ protocol MainScreenPresentationLogic {
     func present(response: ProductList.List.Response)
 }
 
-class ProductListPresenter: MainScreenPresentationLogic {
+class MainScreenPresenter: MainScreenPresentationLogic {
     
     weak var viewController: ProductDisplayLogic?
 

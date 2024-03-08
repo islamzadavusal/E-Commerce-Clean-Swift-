@@ -23,7 +23,8 @@ class MainScreenViewController: UIViewController, ProductDisplayLogic {
     let cellIdentifier = "ProductsTableViewCell"
     var rows = [ProductList.Rows]()
     
-    var interactor: ProductListBusinessLogic?
+    var interactor: (ProductListBusinessLogic & ProductListDataStore)?
+    var router: ProductRoutingLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +75,12 @@ extension MainScreenViewController: UITableViewDataSource {
 
 extension MainScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+         
+        if let response = interactor?.productListResponse {
+            router?.routeToDetail(productResponse: response, selectedIndex: indexPath.row)
+
+        }
+    
     }
 }
 
