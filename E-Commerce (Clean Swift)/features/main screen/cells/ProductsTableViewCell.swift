@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ProductsTableViewCell: UITableViewCell {
+class ProductsTableViewCell: UITableViewCell, ProductCellProtocol {
     
     
     @IBOutlet weak var productImage: UIImageView!
@@ -22,6 +22,10 @@ class ProductsTableViewCell: UITableViewCell {
     @IBOutlet weak var productOldPrice: UILabel!
     
     @IBOutlet weak var productContainerView: UIView!
+    
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var imageWidth: NSLayoutConstraint!
     
     var viewModel : ProductUIData!
     
@@ -41,15 +45,22 @@ class ProductsTableViewCell: UITableViewCell {
         
         productTitle.text = productData.title
         productDescribe.text = productData.description
-        productPrice.text = "\(productData.price)"
-        productOldPrice.text = "\(productData.price)"
+        productPrice.text = "\(productData.price) TL"
+        productOldPrice.text = "\(productData.price) TL"
         
         self.productImage.kf.setImage(with: URL(string: productData.thumbnailURL)) { image in
             print("Success image")
+            
+            self.productImage.layer.cornerRadius = 10
+            
+//            if let size = try? image.get().image.size {
+//                let ratio = size.width / size.height
+//                self.imageWidth.constant = self.imageHeight.constant * ratio
+//            }
+            
+            //        self.productImage.loadImage(urlString: productData.thumbnailURL)
+            
         }
-        
-//        self.productImage.loadImage(urlString: productData.thumbnailURL)
-
     }
 }
 
