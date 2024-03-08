@@ -11,17 +11,6 @@ struct ProductResponse: Codable {
     let products: [Product]
 }
 
-//struct Product: Codable {
-//    let id: Int
-//    let title, productDescription: String
-//    let price: Double
-//    let discountPercentage: Double
-//    let rating: Double
-//    let stock: Int
-//    let brand, category, thumbnail: String
-//    let images: [String]
-//}
-
 // MARK: - Product
 struct Product: Codable {
     let id: Int

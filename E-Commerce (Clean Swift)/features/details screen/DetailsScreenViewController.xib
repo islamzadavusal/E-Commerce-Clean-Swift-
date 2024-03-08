@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsScreenViewController" customModule="E_Commerce__Clean_Swift_" customModuleProvider="target">
             <connections>
+                <outlet property="productDescribe" destination="F4i-cC-e2z" id="5e0-GZ-5pR"/>
+                <outlet property="productImage" destination="FFe-RY-gke" id="onE-Lf-5KC"/>
+                <outlet property="productPrice" destination="zr5-RA-ZkA" id="jP1-5j-dYY"/>
+                <outlet property="productTitle" destination="LEr-LV-1vV" id="TZD-Yi-3YP"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vtT-A1-pNb"/>
             </connections>
         </placeholder>

@@ -14,18 +14,36 @@ import UIKit
 
 protocol DetailsScreenPresentationLogic
 {
-  func presentSomething(response: DetailsScreen.Something.Response)
+  func present(response: DetailsScreen.GetData.Response)
+  func present(response: DetailsScreen.AddToFav.Response)
+  func present(response: DetailsScreen.AddToBasket.Response)
 }
 
 class DetailsScreenPresenter: DetailsScreenPresentationLogic
 {
-  weak var viewController: DetailsScreenDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: DetailsScreen.Something.Response)
-  {
-    let viewModel = DetailsScreen.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    
+    weak var viewController: DetailsScreenDisplayLogic?
+    
+    
+    func present(response: DetailsScreen.GetData.Response) {
+        let product = response.productDetailResponse.products
+        let viewModel = DetailsScreen.GetData.ViewModel(title: "Test",
+                                                        price: "Test",
+                                                        describe: "Test",
+                                                        hasFav: UIImage(systemName: "heart.fill")!,
+                                                        image: UIImage(systemName: "heart.fill")!)
+        
+        viewController?.display(viewModel: viewModel)
+    }
+    
+    func present(response: DetailsScreen.AddToFav.Response) {
+        
+    }
+    
+    func present(response: DetailsScreen.AddToBasket.Response) {
+        
+    }
+    
+
+
 }

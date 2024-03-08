@@ -12,78 +12,64 @@
 
 import UIKit
 
-protocol DetailsScreenDisplayLogic: class
-{
-  func displaySomething(viewModel: DetailsScreen.Something.ViewModel)
+protocol DetailsScreenDisplayLogic : AnyObject {
+    
+  func display(viewModel: DetailsScreen.GetData.ViewModel)
 }
 
 class DetailsScreenViewController: UIViewController, DetailsScreenDisplayLogic
 {
+    
+    
+    @IBOutlet weak var productImage: UIImageView!
+    
+    @IBOutlet weak var productTitle: UILabel!
+    
+    @IBOutlet weak var productDescribe: UILabel!
+    
+    @IBOutlet weak var productPrice: UILabel!
+    
+    
   var interactor: DetailsScreenBusinessLogic?
   var router: (NSObjectProtocol & DetailsScreenRoutingLogic & DetailsScreenDataPassing)?
 
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = DetailsScreenInteractor()
-    let presenter = DetailsScreenPresenter()
-    let router = DetailsScreenRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
-  // MARK: View lifecycle
   
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+    getData()
   }
+
   
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
+  func getData()
   {
-    let request = DetailsScreen.Something.Request()
-    interactor?.doSomething(request: request)
+    let request = DetailsScreen.GetData.Request()
+    interactor?.handle(request: request)
   }
   
-  func displaySomething(viewModel: DetailsScreen.Something.ViewModel)
+  func display(viewModel: DetailsScreen.GetData.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+    productTitle.text = viewModel.title
+    productDescribe.text = viewModel.describe
+//    productImage.image =  viewModel.image
+    productPrice.text = viewModel.price
   }
+    
+    func addFav() {
+        let request = DetailsScreen.AddToFav.Request(productID: "", isFav: true)
+        interactor?.handle(request: request)
+    }
+    
+    func displayFav (viewModel : DetailsScreen.AddToFav.ViewModel){
+        print(viewModel.resultMessage)
+    }
+    
+    func addBasket() {
+        let request = DetailsScreen.AddToBasket.Request(productID: "", itemCount: "")
+        interactor?.handle(request: request)
+    }
+    
+    func displayBasket (viewModel : DetailsScreen.AddToBasket.ViewModel){
+        print(viewModel.resultMessage)
+    }
 }

@@ -245,8 +245,8 @@
 				8C08E9542B99C1E400585511 /* DetailsScreenRouter.swift */,
 				8C08E9552B99C1E400585511 /* DetailsScreenModels.swift */,
 				8C08E9562B99C1E400585511 /* DetailsScreenViewController.swift */,
-				8C08E9572B99C1E400585511 /* DetailsScreenInteractor.swift */,
 				8C47B3F62B9B090E00949131 /* DetailsScreenViewController.xib */,
+				8C08E9572B99C1E400585511 /* DetailsScreenInteractor.swift */,
 			);
 			path = "details screen";
 			sourceTree = "<group>";

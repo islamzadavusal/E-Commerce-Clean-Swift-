@@ -25,7 +25,7 @@ class ViewControllerFactory {
       
         // Ürün listesi için gerekli bileşenlerin oluşturulması
         let interactor = MainScreenInteractor()
-        let presenter = MainScreenPresenter() // Doğru presenter burada
+        let presenter = MainScreenPresenter()
         let router = MainScreenRouter()
         
         productListController.interactor = interactor
@@ -53,6 +53,21 @@ class ViewControllerFactory {
     
     func makeProductDetail(productDetailResponse : ProductResponse, selectedIndex : Int) -> UIViewController {
         let details = DetailsScreenViewController(nibName: "DetailsScreenViewController", bundle: Bundle.main)
+        let interactor = DetailsScreenInteractor()
+        let presenter = DetailsScreenPresenter()
+        let router = DetailsScreenRouter()
+        
+        details.interactor = interactor
+        details.router = router
+        
+        interactor.presenter = presenter
+        interactor.productListResponse = productDetailResponse
+        interactor.selectedItem = selectedIndex
+        
+        presenter.viewController = details
+        router.viewController = details
+        router.dataStore = interactor
+        
         return details
     }
 }

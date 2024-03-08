@@ -16,16 +16,57 @@ enum DetailsScreen
 {
   // MARK: Use cases
   
-  enum Something
+  enum GetData
   {
-    struct Request
+    struct Request  // Interactor
     {
     }
-    struct Response
+    struct Response // Presenter
     {
+        let productDetailResponse : ProductResponse
+        let hasFav : Bool
     }
-    struct ViewModel
+    struct ViewModel // ViewController
     {
+        let title : String
+        let price : String
+        let describe : String
+        let hasFav : UIImage
+        let image : UIImage
     }
   }
+    
+    enum AddToBasket {
+        struct Request
+        {
+            let productID : String
+            let itemCount : String
+        }
+        struct Response
+        {
+            let isItemAdded : Bool
+        }
+        struct ViewModel
+        {
+            let resultMessage: String
+        }
+    }
+    
+    
+    enum AddToFav {
+        struct Request
+        {
+            let productID : String
+            let isFav : Bool
+        }
+        struct Response
+        {
+            let hasFav : Bool
+        }
+        struct ViewModel
+        {
+            let hasFav : UIImage
+            let resultMessage: String
+        }
+    }
 }

@@ -14,28 +14,39 @@ import UIKit
 
 protocol DetailsScreenBusinessLogic
 {
-  func doSomething(request: DetailsScreen.Something.Request)
+  func handle(request: DetailsScreen.GetData.Request)
+  func handle(request: DetailsScreen.AddToFav.Request)
+  func handle(request: DetailsScreen.AddToBasket.Request)
 }
 
 protocol DetailsScreenDataStore
 {
-  //var name: String { get set }
+    var productListResponse: ProductResponse? { get set }
+    var selectedItem : Int { get set }
 }
 
 class DetailsScreenInteractor: DetailsScreenBusinessLogic, DetailsScreenDataStore
 {
+    var selectedItem: Int = 0
+    
+    var productListResponse: ProductResponse?
+    
+    
   var presenter: DetailsScreenPresentationLogic?
   var worker: DetailsScreenWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: DetailsScreen.Something.Request)
-  {
-    worker = DetailsScreenWorker()
-    worker?.doSomeWork()
     
-    let response = DetailsScreen.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    
+    func handle(request: DetailsScreen.GetData.Request) {
+        guard let response = self.productListResponse else { return }
+        presenter?.present(response: DetailsScreen.GetData.Response(productDetailResponse: response, hasFav: false))
+    }
+    
+    func handle(request: DetailsScreen.AddToFav.Request) {
+        
+    }
+    
+    func handle(request: DetailsScreen.AddToBasket.Request) {
+        
+    }
+    
 }

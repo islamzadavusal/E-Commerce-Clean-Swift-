@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol BasketScreenDisplayLogic: class
+protocol BasketScreenDisplayLogic: AnyObject
 {
   func displaySomething(viewModel: BasketScreen.Something.ViewModel)
 }

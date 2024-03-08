@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol FavoriteScreenDisplayLogic: class
+protocol FavoriteScreenDisplayLogic: AnyObject
 {
   func displaySomething(viewModel: FavoriteScreen.Something.ViewModel)
 }
