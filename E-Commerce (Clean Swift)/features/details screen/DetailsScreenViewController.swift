@@ -51,8 +51,8 @@ class DetailsScreenViewController: UIViewController, DetailsScreenDisplayLogic
   {
     productTitle.text = viewModel.title
     productDescribe.text = viewModel.describe
-//    productImage.image =  viewModel.image
-    productPrice.text = viewModel.price
+    productImage.image =  viewModel.image
+    productPrice.text = "\(viewModel.price) TL"
   }
     
     func addFav() {

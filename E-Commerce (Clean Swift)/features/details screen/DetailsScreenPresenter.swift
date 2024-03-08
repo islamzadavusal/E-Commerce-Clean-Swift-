@@ -28,7 +28,7 @@ class DetailsScreenPresenter: DetailsScreenPresentationLogic
     func present(response: DetailsScreen.GetData.Response) {
         let product = response.productDetailResponse.products
         let viewModel = DetailsScreen.GetData.ViewModel(title: "Test",
-                                                        price: "Test",
+                                                        price: 0.0,
                                                         describe: "Test",
                                                         hasFav: UIImage(systemName: "heart.fill")!,
                                                         image: UIImage(systemName: "heart.fill")!)

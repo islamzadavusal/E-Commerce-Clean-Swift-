@@ -29,7 +29,7 @@ enum DetailsScreen
     struct ViewModel // ViewController
     {
         let title : String
-        let price : String
+        let price : Double
         let describe : String
         let hasFav : UIImage
         let image : UIImage
