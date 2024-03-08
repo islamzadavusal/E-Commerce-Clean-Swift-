@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreenViewController" customModule="E_Commerce__Clean_Swift_" customModuleProvider="target">
             <connections>
+                <outlet property="searchBar" destination="Prm-VD-2WG" id="nxY-tH-roe"/>
                 <outlet property="tableView" destination="v6Y-80-Gij" id="iSq-uc-irX"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7Ip-MQ-tpr"/>
             </connections>
