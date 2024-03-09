@@ -23,7 +23,8 @@ enum DetailsScreen
     }
     struct Response // Presenter
     {
-        let productDetailResponse : ProductResponse
+//        let productDetailResponse : ProductResponse
+        let product: Product
         let hasFav : Bool
     }
     struct ViewModel // ViewController

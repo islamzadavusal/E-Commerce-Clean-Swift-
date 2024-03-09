@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol DetailsScreenPresentationLogic
 {
@@ -26,14 +27,23 @@ class DetailsScreenPresenter: DetailsScreenPresentationLogic
     
     
     func present(response: DetailsScreen.GetData.Response) {
-        let product = response.productDetailResponse.products
-        let viewModel = DetailsScreen.GetData.ViewModel(title: "Test",
-                                                        price: 0.0,
-                                                        describe: "Test",
-                                                        hasFav: UIImage(systemName: "heart.fill")!,
-                                                        image: UIImage(systemName: "heart.fill")!)
         
-        viewController?.display(viewModel: viewModel)
+        let product = response.product
+        
+        if let thumbnailURL = URL(string: product.thumbnail) {
+            let imageView = UIImageView()
+            imageView.kf.setImage(with: thumbnailURL)
+            
+            let viewModel = DetailsScreen.GetData.ViewModel(
+                title: product.title,
+                price: product.price,
+                describe: product.productDescription,
+                hasFav: UIImage(systemName: "heart.fill")!,
+                image: imageView.image!
+            )
+            
+            viewController?.display(viewModel: viewModel)
+        }
     }
     
     func present(response: DetailsScreen.AddToFav.Response) {
@@ -43,7 +53,5 @@ class DetailsScreenPresenter: DetailsScreenPresentationLogic
     func present(response: DetailsScreen.AddToBasket.Response) {
         
     }
-    
-
 
 }

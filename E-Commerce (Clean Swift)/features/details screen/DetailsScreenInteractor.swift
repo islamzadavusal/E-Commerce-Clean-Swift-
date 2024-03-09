@@ -36,9 +36,14 @@ class DetailsScreenInteractor: DetailsScreenBusinessLogic, DetailsScreenDataStor
   var worker: DetailsScreenWorker?
     
     
+//    func handle(request: DetailsScreen.GetData.Request) {
+//        guard let response = self.productListResponse else { return }
+//        presenter?.present(response: DetailsScreen.GetData.Response(productDetailResponse: response, hasFav: false))
+//    }
+    
     func handle(request: DetailsScreen.GetData.Request) {
-        guard let response = self.productListResponse else { return }
-        presenter?.present(response: DetailsScreen.GetData.Response(productDetailResponse: response, hasFav: false))
+      guard let product = productListResponse?.products[selectedItem] else { return }
+      presenter?.present(response: DetailsScreen.GetData.Response(product: product, hasFav: false))
     }
     
     func handle(request: DetailsScreen.AddToFav.Request) {
