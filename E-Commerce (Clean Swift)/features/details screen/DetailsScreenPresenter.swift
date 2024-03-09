@@ -49,7 +49,11 @@ class DetailsScreenPresenter: DetailsScreenPresentationLogic
     }
     
     func present(response: DetailsScreen.AddToFav.Response) {
-        viewController?.displayFavorite(viewModel: DetailsScreen.AddToFav.ViewModel(hasFav: UIImage(systemName: "heart.fill")!, resultMessage: "Added to Favorite"))
+        
+        let favImage = response.hasFav ? UIImage(systemName: "heart.fill")! : UIImage(systemName: "heart")!
+        let text = response.hasFav ? "Added to Favorite" : "Delete than Favorite"
+        
+        viewController?.displayFavorite(viewModel: DetailsScreen.AddToFav.ViewModel(hasFav: favImage, resultMessage: text))
     }
     
     func present(response: DetailsScreen.AddToBasket.Response) {

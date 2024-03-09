@@ -55,8 +55,11 @@ class DetailsScreenInteractor: DetailsScreenBusinessLogic, DetailsScreenDataStor
     }
     
     func handle(request: DetailsScreen.AddToFav.Request) {
-        FavoriteRepository.shared.favorite(productionID: productionID, isFav: request.isFav)
-        presenter?.present(response: DetailsScreen.AddToFav.Response(hasFav: true))
+        
+        let isFavorited = !FavoriteRepository.shared.isFavorited(productionID: productionID)
+        
+        FavoriteRepository.shared.favorite(productionID: productionID, isFav: isFavorited)
+        presenter?.present(response: DetailsScreen.AddToFav.Response(hasFav: isFavorited))
     }
     
     func handle(request: DetailsScreen.AddToBasket.Request) {
