@@ -19,6 +19,7 @@ protocol ProductDisplayLogic: AnyObject {
 class MainScreenViewController: UIViewController, ProductDisplayLogic {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     let cellIdentifier = "ProductsTableViewCell"
     var rows = [ProductList.Rows]()
