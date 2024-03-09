@@ -57,7 +57,7 @@ enum DetailsScreen
     enum AddToFav {
         struct Request
         {
-            let productID : String
+            let productID : Int
             let isFav : Bool
         }
         struct Response

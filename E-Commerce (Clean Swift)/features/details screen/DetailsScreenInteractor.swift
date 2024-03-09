@@ -23,10 +23,14 @@ protocol DetailsScreenDataStore
 {
     var productListResponse: ProductResponse? { get set }
     var selectedItem : Int { get set }
+    
+    var productionID : Int { get set }
 }
 
 class DetailsScreenInteractor: DetailsScreenBusinessLogic, DetailsScreenDataStore
 {
+    var productionID: Int = 0
+    
     var selectedItem: Int = 0
     
     var productListResponse: ProductResponse?
@@ -43,11 +47,15 @@ class DetailsScreenInteractor: DetailsScreenBusinessLogic, DetailsScreenDataStor
     
     func handle(request: DetailsScreen.GetData.Request) {
       guard let product = productListResponse?.products[selectedItem] else { return }
-      presenter?.present(response: DetailsScreen.GetData.Response(product: product, hasFav: false))
+        productionID = (productListResponse?.products[selectedItem].id)!
+        
+        let isFav = FavoriteRepository.shared.isFavorited(productionID: productionID)
+        
+      presenter?.present(response: DetailsScreen.GetData.Response(product: product, hasFav: isFav))
     }
     
     func handle(request: DetailsScreen.AddToFav.Request) {
-        FavoriteRepository().favorite(productionID: request.productID, isFav: request.isFav)
+        FavoriteRepository.shared.favorite(productionID: productionID, isFav: request.isFav)
         presenter?.present(response: DetailsScreen.AddToFav.Response(hasFav: true))
     }
     

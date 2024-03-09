@@ -34,11 +34,13 @@ class DetailsScreenPresenter: DetailsScreenPresentationLogic
             let imageView = UIImageView()
             imageView.kf.setImage(with: thumbnailURL)
             
+            let favImage = response.hasFav ? UIImage(systemName: "heart.fill")! : UIImage(systemName: "heart")!
+            
             let viewModel = DetailsScreen.GetData.ViewModel(
                 title: product.title,
                 price: product.price,
                 describe: product.productDescription,
-                hasFav: UIImage(systemName: "heart")!,
+                hasFav: favImage,
                 image: imageView.image!
             )
             

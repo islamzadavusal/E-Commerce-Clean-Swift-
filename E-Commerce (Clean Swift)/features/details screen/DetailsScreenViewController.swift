@@ -60,10 +60,13 @@ class DetailsScreenViewController: UIViewController, DetailsScreenDisplayLogic
     productDescribe.text = viewModel.describe
     productImage.image =  viewModel.image
     productPrice.text = "\(viewModel.price) TL"
+      
+    favoriteIcon.setImage(viewModel.hasFav, for: .normal)
+
   }
     
    @IBAction func addFav() {
-        let request = DetailsScreen.AddToFav.Request(productID: "100", isFav: true)
+        let request = DetailsScreen.AddToFav.Request(productID: 0, isFav: true)
         interactor?.handle(request: request)
     }
     
