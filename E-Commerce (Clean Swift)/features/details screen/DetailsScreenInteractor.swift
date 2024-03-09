@@ -47,7 +47,8 @@ class DetailsScreenInteractor: DetailsScreenBusinessLogic, DetailsScreenDataStor
     }
     
     func handle(request: DetailsScreen.AddToFav.Request) {
-        
+        FavoriteRepository().favorite(productionID: request.productID, isFav: request.isFav)
+        presenter?.present(response: DetailsScreen.AddToFav.Response(hasFav: true))
     }
     
     func handle(request: DetailsScreen.AddToBasket.Request) {

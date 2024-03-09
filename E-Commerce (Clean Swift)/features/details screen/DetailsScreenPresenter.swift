@@ -38,7 +38,7 @@ class DetailsScreenPresenter: DetailsScreenPresentationLogic
                 title: product.title,
                 price: product.price,
                 describe: product.productDescription,
-                hasFav: UIImage(systemName: "heart.fill")!,
+                hasFav: UIImage(systemName: "heart")!,
                 image: imageView.image!
             )
             
@@ -47,7 +47,7 @@ class DetailsScreenPresenter: DetailsScreenPresentationLogic
     }
     
     func present(response: DetailsScreen.AddToFav.Response) {
-        
+        viewController?.displayFavorite(viewModel: DetailsScreen.AddToFav.ViewModel(hasFav: UIImage(systemName: "heart.fill")!, resultMessage: "Added to Favorite"))
     }
     
     func present(response: DetailsScreen.AddToBasket.Response) {

@@ -15,6 +15,8 @@ import UIKit
 protocol DetailsScreenDisplayLogic : AnyObject {
     
   func display(viewModel: DetailsScreen.GetData.ViewModel)
+    
+  func displayFavorite(viewModel: DetailsScreen.AddToFav.ViewModel)
 }
 
 class DetailsScreenViewController: UIViewController, DetailsScreenDisplayLogic
@@ -30,6 +32,9 @@ class DetailsScreenViewController: UIViewController, DetailsScreenDisplayLogic
     @IBOutlet weak var productPrice: UILabel!
     
     @IBOutlet weak var productMainTitle: UILabel!
+    
+    @IBOutlet weak var favoriteIcon: UIButton!
+    
     
   var interactor: DetailsScreenBusinessLogic?
   var router: (NSObjectProtocol & DetailsScreenRoutingLogic & DetailsScreenDataPassing)?
@@ -57,13 +62,14 @@ class DetailsScreenViewController: UIViewController, DetailsScreenDisplayLogic
     productPrice.text = "\(viewModel.price) TL"
   }
     
-    func addFav() {
-        let request = DetailsScreen.AddToFav.Request(productID: "", isFav: true)
+   @IBAction func addFav() {
+        let request = DetailsScreen.AddToFav.Request(productID: "100", isFav: true)
         interactor?.handle(request: request)
     }
     
-    func displayFav (viewModel : DetailsScreen.AddToFav.ViewModel){
+    func displayFavorite (viewModel : DetailsScreen.AddToFav.ViewModel){
         print(viewModel.resultMessage)
+        favoriteIcon.setImage(viewModel.hasFav, for: .normal)
     }
     
     func addBasket() {

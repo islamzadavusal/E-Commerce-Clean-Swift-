@@ -32,6 +32,7 @@
 		8C08E9752B99C22200585511 /* BasketScreenModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E96F2B99C22200585511 /* BasketScreenModels.swift */; };
 		8C08E9762B99C22200585511 /* BasketScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E9702B99C22200585511 /* BasketScreenViewController.swift */; };
 		8C08E9772B99C22200585511 /* BasketScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E9712B99C22200585511 /* BasketScreenInteractor.swift */; };
+		8C39E2CD2B9C49D500A7FC2E /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39E2CC2B9C49D500A7FC2E /* FavoriteRepository.swift */; };
 		8C47B3F72B9B090E00949131 /* DetailsScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C47B3F62B9B090E00949131 /* DetailsScreenViewController.xib */; };
 		8C7C6F352B99CD5100DAC98D /* MainScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C7C6F342B99CD5100DAC98D /* MainScreenViewController.xib */; };
 		8C7C6F382B99D43B00DAC98D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8C7C6F372B99D43B00DAC98D /* Kingfisher */; };
@@ -79,6 +80,7 @@
 		8C08E96F2B99C22200585511 /* BasketScreenModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenModels.swift; sourceTree = "<group>"; };
 		8C08E9702B99C22200585511 /* BasketScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewController.swift; sourceTree = "<group>"; };
 		8C08E9712B99C22200585511 /* BasketScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenInteractor.swift; sourceTree = "<group>"; };
+		8C39E2CC2B9C49D500A7FC2E /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		8C47B3F62B9B090E00949131 /* DetailsScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsScreenViewController.xib; sourceTree = "<group>"; };
 		8C7C6F342B99CD5100DAC98D /* MainScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenViewController.xib; sourceTree = "<group>"; };
 		8C7C6F392B99E2E200DAC98D /* BasketScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketScreenViewController.xib; sourceTree = "<group>"; };
@@ -177,6 +179,14 @@
 			path = "basket screen";
 			sourceTree = "<group>";
 		};
+		8C39E2CB2B9C49BA00A7FC2E /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				8C39E2CC2B9C49D500A7FC2E /* FavoriteRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
 		8CF609C02B99B5DC00CB66BC = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 		8CF609CB2B99B5DC00CB66BC /* E-Commerce (Clean Swift) */ = {
 			isa = PBXGroup;
 			children = (
+				8C39E2CB2B9C49BA00A7FC2E /* repository */,
 				8C08E94A2B99C06200585511 /* UI */,
 				8C08E9452B99BFD600585511 /* models */,
 				8C08E9402B99BD8C00585511 /* network */,
@@ -350,6 +361,7 @@
 				8CF609EA2B99B64800CB66BC /* MainScreenRouter.swift in Sources */,
 				8C08E9582B99C1E400585511 /* DetailsScreenPresenter.swift in Sources */,
 				8C08E9592B99C1E400585511 /* DetailsScreenWorker.swift in Sources */,
+				8C39E2CD2B9C49D500A7FC2E /* FavoriteRepository.swift in Sources */,
 				8C08E95A2B99C1E400585511 /* DetailsScreenRouter.swift in Sources */,
 				8C08E95B2B99C1E400585511 /* DetailsScreenModels.swift in Sources */,
 				8C08E95C2B99C1E400585511 /* DetailsScreenViewController.swift in Sources */,

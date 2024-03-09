@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsScreenViewController" customModule="E_Commerce__Clean_Swift_" customModuleProvider="target">
             <connections>
+                <outlet property="favoriteIcon" destination="NBA-PA-rOV" id="fFx-a2-XkZ"/>
                 <outlet property="productDescribe" destination="F4i-cC-e2z" id="5e0-GZ-5pR"/>
                 <outlet property="productImage" destination="FFe-RY-gke" id="onE-Lf-5KC"/>
                 <outlet property="productMainTitle" destination="Try-Jk-VKE" id="zR1-gj-acZ"/>
@@ -50,37 +52,43 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-rd-D6O">
-                    <rect key="frame" x="338" y="65.666666666666657" width="40" height="37"/>
-                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="TM0-Kg-GaZ"/>
-                        <constraint firstAttribute="height" constant="40" id="XWF-4m-Xab"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zr5-RA-ZkA">
                     <rect key="frame" x="328" y="389" width="50" height="24"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBA-PA-rOV">
+                    <rect key="frame" x="343" y="64" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="VdB-sY-XNc"/>
+                        <constraint firstAttribute="height" constant="40" id="zZJ-at-LvU"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="addFav" destination="-1" eventType="touchUpInside" id="hjV-NL-4cS"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qcJ-rd-D6O" secondAttribute="trailing" constant="15" id="3cA-Rr-eFH"/>
+                <constraint firstItem="FFe-RY-gke" firstAttribute="top" secondItem="NBA-PA-rOV" secondAttribute="bottom" constant="10" id="5Xq-t8-iMs"/>
                 <constraint firstItem="Try-Jk-VKE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="ERB-51-wZr"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="F4i-cC-e2z" secondAttribute="trailing" constant="15" id="EgI-Ga-w36"/>
+                <constraint firstItem="NBA-PA-rOV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="Hzq-zP-Axo"/>
                 <constraint firstItem="F4i-cC-e2z" firstAttribute="top" secondItem="LEr-LV-1vV" secondAttribute="bottom" constant="15" id="Xai-qm-D85"/>
                 <constraint firstItem="FFe-RY-gke" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ZiQ-X9-kud"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zr5-RA-ZkA" secondAttribute="trailing" constant="15" id="aTa-BM-kc8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Try-Jk-VKE" secondAttribute="trailing" constant="10" id="bwf-Ur-05N"/>
                 <constraint firstItem="zr5-RA-ZkA" firstAttribute="top" secondItem="FFe-RY-gke" secondAttribute="bottom" constant="25" id="bwx-gW-Gm3"/>
-                <constraint firstItem="FFe-RY-gke" firstAttribute="top" secondItem="qcJ-rd-D6O" secondAttribute="bottom" constant="10" id="gif-e9-XRR"/>
                 <constraint firstItem="LEr-LV-1vV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="jcd-c8-8Pw"/>
                 <constraint firstItem="FFe-RY-gke" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kjU-fS-c9L"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NBA-PA-rOV" secondAttribute="trailing" constant="10" id="qMO-UM-9ec"/>
                 <constraint firstItem="LEr-LV-1vV" firstAttribute="top" secondItem="FFe-RY-gke" secondAttribute="bottom" constant="20" id="uJs-9M-PQZ"/>
-                <constraint firstItem="qcJ-rd-D6O" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="xu7-RI-aXN"/>
                 <constraint firstItem="Try-Jk-VKE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="ywA-Ge-tVr"/>
                 <constraint firstItem="F4i-cC-e2z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="zOS-mW-gyi"/>
             </constraints>
@@ -88,7 +96,7 @@
         </view>
     </objects>
     <resources>
-        <image name="heart.square.fill" catalog="system" width="128" height="114"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
