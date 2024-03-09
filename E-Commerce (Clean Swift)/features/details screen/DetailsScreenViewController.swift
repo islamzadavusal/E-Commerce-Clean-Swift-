@@ -29,6 +29,7 @@ class DetailsScreenViewController: UIViewController, DetailsScreenDisplayLogic
     
     @IBOutlet weak var productPrice: UILabel!
     
+    @IBOutlet weak var productMainTitle: UILabel!
     
   var interactor: DetailsScreenBusinessLogic?
   var router: (NSObjectProtocol & DetailsScreenRoutingLogic & DetailsScreenDataPassing)?
@@ -50,6 +51,7 @@ class DetailsScreenViewController: UIViewController, DetailsScreenDisplayLogic
   func display(viewModel: DetailsScreen.GetData.ViewModel)
   {
     productTitle.text = viewModel.title
+    productMainTitle.text = viewModel.title
     productDescribe.text = viewModel.describe
     productImage.image =  viewModel.image
     productPrice.text = "\(viewModel.price) TL"
