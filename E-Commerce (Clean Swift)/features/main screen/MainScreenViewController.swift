@@ -19,9 +19,12 @@ protocol ProductDisplayLogic: AnyObject {
 class MainScreenViewController: UIViewController, ProductDisplayLogic {
     
     @IBOutlet weak var tableView: UITableView!
+ 
     @IBOutlet weak var searchBar: UISearchBar!
     
     let cellIdentifier = "ProductsTableViewCell"
+    let emptycellIdentifier = "empty_cell_identifier"
+    
     var rows = [ProductList.Rows]()
     
     var interactor: (ProductListBusinessLogic & ProductListDataStore)?
@@ -32,6 +35,9 @@ class MainScreenViewController: UIViewController, ProductDisplayLogic {
         
         let cell = UINib(nibName: "ProductsTableViewCell", bundle: nil)
         tableView.register(cell, forCellReuseIdentifier: cellIdentifier)
+        
+        let emptycell = UINib(nibName: "EmptyTableViewCell", bundle: nil)
+        tableView.register(emptycell, forCellReuseIdentifier: emptycellIdentifier)
         
         getList()
     }
@@ -82,6 +88,13 @@ extension MainScreenViewController: UITableViewDelegate {
 
         }
     
+    }
+}
+
+extension MainScreenViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let request = ProductList.List.Request(pageIndex: 1, pageItemCount: 10, searchTitle: searchText)
+        interactor?.searchTitle(request: request)
     }
 }
 

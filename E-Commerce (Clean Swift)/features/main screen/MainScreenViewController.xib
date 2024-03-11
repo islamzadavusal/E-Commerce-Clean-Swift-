@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreenViewController" customModule="E_Commerce__Clean_Swift_" customModuleProvider="target">
             <connections>
-                <outlet property="searchBar" destination="Prm-VD-2WG" id="mqI-ZH-URU"/>
+                <outlet property="searchBar" destination="Prm-VD-2WG" id="pQY-zU-mhs"/>
                 <outlet property="tableView" destination="v6Y-80-Gij" id="iSq-uc-irX"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7Ip-MQ-tpr"/>
             </connections>
@@ -37,6 +37,9 @@
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Prm-VD-2WG">
                     <rect key="frame" x="10" y="110" width="204" height="56"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="upI-yY-UxX"/>
+                    </connections>
                 </searchBar>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7L9-v2-td1">
                     <rect key="frame" x="224" y="120" width="77" height="35"/>

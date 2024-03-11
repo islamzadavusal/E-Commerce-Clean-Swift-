@@ -17,6 +17,7 @@ enum ProductList {
         struct Request {
             let pageIndex: Int
             let pageItemCount: Int
+            var searchTitle: String = ""
         }
         struct Response {
             let productListResponse: ProductResponse?

@@ -22,7 +22,7 @@ class NetworkManager {
         request.httpMethod = method.rawValue
         request.httpBody = body
          
-        var httpFields = request.allHTTPHeaderFields ?? [:]
+        let httpFields = request.allHTTPHeaderFields ?? [:]
        
         request.allHTTPHeaderFields = httpFields
         

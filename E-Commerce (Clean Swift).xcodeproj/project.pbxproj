@@ -34,6 +34,8 @@
 		8C08E9772B99C22200585511 /* BasketScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E9712B99C22200585511 /* BasketScreenInteractor.swift */; };
 		8C39E2CD2B9C49D500A7FC2E /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39E2CC2B9C49D500A7FC2E /* FavoriteRepository.swift */; };
 		8C47B3F72B9B090E00949131 /* DetailsScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C47B3F62B9B090E00949131 /* DetailsScreenViewController.xib */; };
+		8C5355E82B9F2D1A00BDC206 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5355E72B9F2D1A00BDC206 /* EmptyTableViewCell.xib */; };
+		8C5355E92B9F2D1A00BDC206 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5355E62B9F2D1A00BDC206 /* EmptyTableViewCell.swift */; };
 		8C7C6F352B99CD5100DAC98D /* MainScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C7C6F342B99CD5100DAC98D /* MainScreenViewController.xib */; };
 		8C7C6F382B99D43B00DAC98D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8C7C6F372B99D43B00DAC98D /* Kingfisher */; };
 		8C7C6F3A2B99E2E200DAC98D /* BasketScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C7C6F392B99E2E200DAC98D /* BasketScreenViewController.xib */; };
@@ -82,6 +84,8 @@
 		8C08E9712B99C22200585511 /* BasketScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenInteractor.swift; sourceTree = "<group>"; };
 		8C39E2CC2B9C49D500A7FC2E /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		8C47B3F62B9B090E00949131 /* DetailsScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsScreenViewController.xib; sourceTree = "<group>"; };
+		8C5355E62B9F2D1A00BDC206 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		8C5355E72B9F2D1A00BDC206 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		8C7C6F342B99CD5100DAC98D /* MainScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenViewController.xib; sourceTree = "<group>"; };
 		8C7C6F392B99E2E200DAC98D /* BasketScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketScreenViewController.xib; sourceTree = "<group>"; };
 		8C7C6F3B2B99E31400DAC98D /* FavoriteScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteScreenViewController.xib; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 			children = (
 				8CF609F02B99B7BE00CB66BC /* ProductsTableViewCell.swift */,
 				8CF609F12B99B7BE00CB66BC /* ProductsTableViewCell.xib */,
+				8C5355E62B9F2D1A00BDC206 /* EmptyTableViewCell.swift */,
+				8C5355E72B9F2D1A00BDC206 /* EmptyTableViewCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C7C6F3C2B99E31400DAC98D /* FavoriteScreenViewController.xib in Resources */,
+				8C5355E82B9F2D1A00BDC206 /* EmptyTableViewCell.xib in Resources */,
 				8CF609D62B99B5DD00CB66BC /* Assets.xcassets in Resources */,
 				8CF609F22B99B7BE00CB66BC /* ProductsTableViewCell.xib in Resources */,
 				8C08E94F2B99C0A000585511 /* MyTabBarViewController.xib in Resources */,
@@ -383,6 +390,7 @@
 				8C08E9672B99C20000585511 /* FavoriteScreenRouter.swift in Sources */,
 				8C08E9682B99C20000585511 /* FavoriteScreenModels.swift in Sources */,
 				8C08E9692B99C20000585511 /* FavoriteScreenViewController.swift in Sources */,
+				8C5355E92B9F2D1A00BDC206 /* EmptyTableViewCell.swift in Sources */,
 				8C08E96A2B99C20000585511 /* FavoriteScreenInteractor.swift in Sources */,
 				8C08E9442B99BDE500585511 /* NetworkUtil.swift in Sources */,
 				8CF609D12B99B5DC00CB66BC /* ViewController.swift in Sources */,

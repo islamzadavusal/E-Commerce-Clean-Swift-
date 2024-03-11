@@ -14,6 +14,7 @@ import UIKit
 
 protocol ProductListBusinessLogic {
     func getList(request: ProductList.List.Request)
+    func searchTitle(request: ProductList.List.Request)
 }
 
 protocol ProductListDataStore {
@@ -34,5 +35,25 @@ class MainScreenInteractor: ProductListBusinessLogic, ProductListDataStore {
             self.presenter?.present(response: presentationResponse)
         })
     }
+    
+    func searchTitle(request: ProductList.List.Request) {
+        
+        if request.searchTitle.isEmpty {
+            let presentationResponse = ProductList.List.Response(productListResponse: productListResponse)
+            self.presenter?.present(response: presentationResponse)
+            
+            return
+        }
+        
+        
+        let products = (self.productListResponse?.products ?? [])
+            .filter ({$0.title.contains(request.searchTitle)})
+        
+        let response = ProductResponse(products: products)
+        
+        let presentationResponse = ProductList.List.Response(productListResponse: response)
+        self.presenter?.present(response: presentationResponse)
+    }
+    
 }
 
